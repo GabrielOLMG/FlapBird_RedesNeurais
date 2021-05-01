@@ -1,0 +1,35 @@
+[NEAT]
+fitness_criterion     = max 	-> Estamos escolhendo pegar os passaros com maior pontuação para poder usar de base
+fitness_threshold     = 100 	-> Estamos dizendo que se um passaro chegou em 100 pontos, ele é bom o suficiente, parando o programa
+pop_size              = 20	-> Tamanho da população
+reset_on_extinction   = False	-> 
+
+
+[DefaultGenome] node : input, output| gene: conexão entre os nós
+
+# node activation options
+activation_default      = tanh	
+activation_mutate_rate  = 0.0	-> Porcentagem de chance de ocorrer a mudança de função de ativação, mudando da d cima para a d baixo
+activation_options      = tanh
+
+# node aggregation options
+aggregation_default     = sum
+aggregation_mutate_rate = 0.0
+aggregation_options     = sum
+
+# node bias options
+bias_init_mean          = 0.0
+bias_init_stdev         = 1.0
+bias_max_value          = 30.0	->maior valor que a bias pode ter
+bias_min_value          = -30.0	->menor valor que a bias pode ter
+bias_mutate_power       = 0.5	-> Este e os 2 abaixo determinam o quanto o bias vai mudar para cada mutação
+bias_mutate_rate        = 0.7
+bias_replace_rate       = 0.1
+
+# genome compatibility options
+compatibility_disjoint_coefficient = 1.0
+compatibility_weight_coefficient   = 0.5
+
+# connection add/remove rates
+conn_add_prob           = 0.5	->Probabilidade de acrescentar uma nova ligação
+conn_delete_prob        = 0.5	->Probabilidade de remover uma nova ligação
